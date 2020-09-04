@@ -1,0 +1,7 @@
+{
+  "name": "canvas-v0",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
