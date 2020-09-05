@@ -1,7 +1,8 @@
 {
   "name": "canvas-v0",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
