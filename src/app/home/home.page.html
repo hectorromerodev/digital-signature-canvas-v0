@@ -1,14 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Digital Signature
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [forceOverscroll]="false">
+  <!-- COLOR PICKER -->
+  <ion-row>
+    <ion-col *ngFor="let color of colors" [style.background]="color" class="color-block" tappable
+    (click)="selectColor(color)"></ion-col>
+  </ion-row>
+  <ion-radio-group [(ngModel)]="selectedColor">
+    <ion-row>
+      <ion-col *ngFor="let color of colors" class="ion-text-center">
+        <ion-radio color="dark" [value]="color"></ion-radio>
+      </ion-col>
+    </ion-row>
+  </ion-radio-group>
+  <!-- LINE WIDHT -->
+  <ion-range min="2" max="20" color="dark" [(ngModel)]="lineWidth">
+    <ion-icon size="small" slot="start" name="brush"></ion-icon>
+    <ion-icon slot="end" name="brush"></ion-icon>
+  </ion-range>
+
+  <!-- CANVAS TO SIGN -->
   <canvas #imageCanvas
   (mousedown)="startDrawing($event)" (touchstart)="startDrawing($event)"
   (mousemove)="moved($event)" (touchmove)="moved($event)"
-  (mouseup)="endDrawing($event)" (touchend)="endDrawing($event)"></canvas>
+  (mouseup)="endDrawing($event)" (touchend)="endDrawing($event)">
+</canvas>
+<ion-button color="dark" expand="full" (click)="setBackground()">
+  <ion-icon slot="start" name="image"></ion-icon>
+  Set Background Image
+</ion-button>
+<ion-button color="dark" expand="full" (click)="exportCanvasImage()">
+  <ion-icon slot="start" name="download"></ion-icon>
+  Export To Image Gallery
+</ion-button>
 </ion-content>
