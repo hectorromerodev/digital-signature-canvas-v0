@@ -8,7 +8,7 @@
 | <img src="./src/assets/home.png" width="250"> | <img src="./src/assets/colors.png" width="250"> | <img src="./src/assets/linewidts.png" width="250"> |
 
 | Background Image      |
-|-------------|-------------|
+|-------------|
 | <img src="./src/assets/background-image.png" width="250"> |
 
 ## Instalations and cofigurations
